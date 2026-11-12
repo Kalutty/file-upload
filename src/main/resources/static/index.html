@@ -1,0 +1,31 @@
+<!doctype html>
+<!-- Se define la página principal donde el usuario escribe el correo y selecciona los archivos. -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Enviar archivos</title>
+  <!-- Se vinculan los estilos compartidos de las páginas. -->
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="card">
+    <h1>Enviar archivos</h1>
+    <p class="intro">Selecciona hasta dos archivos. Cada uno puede pesar como máximo 4 MB.</p>
+    <!-- Se agrupan los campos que JavaScript enviará al backend. -->
+    <form id="upload-form">
+      <label for="email">Correo de destino</label>
+      <input id="email" name="email" type="email" placeholder="tu@correo.com" required>
+
+      <label for="files">Archivos</label>
+      <!-- Se permite seleccionar uno o dos archivos de cualquier tipo. -->
+      <input id="files" name="files" type="file" multiple required>
+      <p id="file-help" class="help">Puedes elegir 1 o 2 archivos de cualquier tipo.</p>
+      <p id="error" class="error" role="alert"></p>
+      <button id="submit" type="submit">Enviar correo</button>
+    </form>
+  </main>
+  <!-- Se carga la lógica de validación y envío del formulario. -->
+  <script src="/app.js"></script>
+</body>
+</html>

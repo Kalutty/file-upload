@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Se hereda la configuración base de Spring Boot para no definir manualmente plugins y versiones comunes. -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.5</version>
+        <relativePath/>
+    </parent>
+
+    <!-- Se identifica el proyecto y se establece su versión inicial. -->
+    <groupId>cl.chapi</groupId>
+    <artifactId>file-upload</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>file-upload</name>
+    <description>Envío de hasta dos archivos por correo usando SMTP</description>
+
+    <!-- Se fija Java 25 como versión utilizada para compilar y desplegar la aplicación. -->
+    <properties>
+        <java.version>25</java.version>
+    </properties>
+
+    <!-- Se agregan las dependencias necesarias para crear la API web, validar datos y enviar correos SMTP. -->
+    <dependencies>
+        <!-- Se incorpora Spring MVC y el servidor web embebido. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!-- Se habilitan validaciones como correo obligatorio y formato de email. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <!-- Se agrega Angus Mail para construir mensajes MIME con archivos adjuntos. -->
+        <dependency>
+            <groupId>org.eclipse.angus</groupId>
+            <artifactId>angus-mail</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+        <!-- Se dejan disponibles las herramientas de prueba de Spring para futuras pruebas automatizadas. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Se configura el plugin que permite empaquetar y ejecutar el proyecto como JAR de Spring Boot. -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>

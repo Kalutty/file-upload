@@ -1,0 +1,10 @@
+target/
+deploy/
+file-upload.zip
+prompt.txt
+direct-deps.txt
+.github/modernize/
+.idea/
+.vscode/settings.json
+*.log
+.env
